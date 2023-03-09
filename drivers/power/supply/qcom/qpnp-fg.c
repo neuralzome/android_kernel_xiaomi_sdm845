@@ -3536,7 +3536,7 @@ static int fg_get_current_cc(struct fg_chip *chip)
 #define BATT_MISSING_STS BIT(6)
 static bool is_battery_missing(struct fg_chip *chip)
 {
-	int rc;
+	/*int rc;
 	u8 fg_batt_sts;
 
 	rc = fg_read(chip, &fg_batt_sts,
@@ -3545,9 +3545,9 @@ static bool is_battery_missing(struct fg_chip *chip)
 		pr_err("spmi read failed: addr=%03X, rc=%d\n",
 				INT_RT_STS(chip->batt_base), rc);
 		return false;
-	}
+	}*/
 
-	return (fg_batt_sts & BATT_MISSING_STS) ? true : false;
+	return true;
 }
 
 static int fg_cap_learning_process_full_data(struct fg_chip *chip)
