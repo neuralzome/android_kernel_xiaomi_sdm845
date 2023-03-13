@@ -762,10 +762,10 @@ static int smb135x_get_prop_charge_type(struct smb135x_chg *chip)
 	return POWER_SUPPLY_CHARGE_TYPE_NONE;
 }
 
-#define DEFAULT_BATT_CAPACITY	50
+#define DEFAULT_BATT_CAPACITY	100
 static int smb135x_get_prop_batt_capacity(struct smb135x_chg *chip)
 {
-	union power_supply_propval ret = {0, };
+/*	union power_supply_propval ret = {0, };
 
 	if (chip->fake_battery_soc >= 0)
 		return chip->fake_battery_soc;
@@ -774,7 +774,7 @@ static int smb135x_get_prop_batt_capacity(struct smb135x_chg *chip)
 				POWER_SUPPLY_PROP_CAPACITY, &ret);
 		return ret.intval;
 	}
-
+*/
 	return DEFAULT_BATT_CAPACITY;
 }
 

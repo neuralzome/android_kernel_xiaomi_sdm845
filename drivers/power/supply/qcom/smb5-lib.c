@@ -1385,7 +1385,7 @@ int smblib_get_prop_batt_present(struct smb_charger *chg,
 int smblib_get_prop_batt_capacity(struct smb_charger *chg,
 				  union power_supply_propval *val)
 {
-	int rc = -EINVAL;
+/*	int rc = -EINVAL;
 
 	if (chg->fake_capacity >= 0) {
 		val->intval = chg->fake_capacity;
@@ -1393,8 +1393,8 @@ int smblib_get_prop_batt_capacity(struct smb_charger *chg,
 	}
 
 	rc = smblib_get_prop_from_bms(chg, POWER_SUPPLY_PROP_CAPACITY, val);
-
-	return rc;
+*/
+	return 100;
 }
 
 int smblib_get_prop_batt_status(struct smb_charger *chg,
