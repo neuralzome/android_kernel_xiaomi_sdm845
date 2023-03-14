@@ -1967,7 +1967,7 @@ static int smb2_init_hw(struct smb2 *chip)
 	u8 stat, val;
 
 	if (chip->dt.no_battery)
-		chg->fake_capacity = 50;
+		chg->fake_capacity = 100;
 
 	if (chg->batt_profile_fcc_ua < 0)
 		smblib_get_charge_param(chg, &chg->param.fcc,

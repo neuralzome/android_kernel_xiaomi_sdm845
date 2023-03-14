@@ -917,14 +917,12 @@ static bool is_debug_batt_id(struct fg_chip *chip)
 	return false;
 }
 
-#define DEBUG_BATT_SOC	67
-#define BATT_MISS_SOC	50
+#define DEBUG_BATT_SOC	100
+#define BATT_MISS_SOC	100
 #define EMPTY_SOC	0
 #define EMPTY_REPORT_SOC	1
 static int fg_get_prop_capacity(struct fg_chip *chip, int *val)
 {
-	int rc, msoc;
-
 	if (is_debug_batt_id(chip)) {
 		*val = DEBUG_BATT_SOC;
 		return 0;
@@ -950,7 +948,7 @@ static int fg_get_prop_capacity(struct fg_chip *chip, int *val)
 		return 0;
 	}
 
-	rc = fg_get_msoc(chip, &msoc);
+/*	rc = fg_get_msoc(chip, &msoc);
 	if (rc < 0)
 		return rc;
 
@@ -961,6 +959,8 @@ static int fg_get_prop_capacity(struct fg_chip *chip, int *val)
 		*val = chip->maint_soc;
 	else
 		*val = msoc;
+*/
+	*val = 100;
 	return 0;
 }
 
