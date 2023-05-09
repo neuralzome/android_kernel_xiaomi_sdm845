@@ -21,7 +21,7 @@
 #include "beryllium-audio-overlay.dtsi"
 
 / {
-	model = "Xiaomi Technologies, Inc. Beryllium MP v2.1";
+	model = "FloMobility Pvt. Ltd., Flo Edge One";
 	compatible = "qcom,sdm845-mtp", "qcom,sdm845", "qcom,mtp";
 	qcom,board-id = <69 0>;
 };
